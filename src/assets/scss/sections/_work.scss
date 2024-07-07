@@ -1,0 +1,95 @@
+.work {
+  .projects {
+    .single {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1150px;
+      margin-bottom: 100px;
+      @include large {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @include medium {
+        margin-bottom: 40px;
+      }
+      @include medium {
+        flex-wrap: wrap;
+      }
+      figure {
+        position: relative;
+        @include large {
+          margin-bottom: 60px;
+        }
+        .image-container {
+          overflow: hidden;
+          max-width: 500px;
+          max-height: 500px;
+          img {
+            transform: translateY(0);
+            transition:
+              transform 4s linear,
+              filter 0.5s linear;
+            max-width: 100%;
+            filter: grayscale(1);
+          }
+        }
+        &:hover {
+          cursor: pointer;
+          .image-container {
+            img {
+              transform: translateY(calc(-100% + 500px));
+              filter: grayscale(0);
+            }
+          }
+        }
+        &:before {
+          content: '';
+          height: 100%;
+          width: 100%;
+          border: 2px solid #000;
+          position: absolute;
+          left: 5px;
+          top: 5px;
+          position: absolute;
+          z-index: 99;
+        }
+      }
+      article {
+        padding-left: 30px;
+        @include large {
+          padding: 0px;
+        }
+        h3 {
+          font-size: 35px;
+          display: block;
+          margin-bottom: 30px;
+          @include large {
+            margin-bottom: 20px;
+          }
+        }
+        @include x-small {
+          p {
+            display: none !important;
+          }
+        }
+      }
+      &:nth-child(even) {
+        margin-left: auto;
+        article {
+          order: 1;
+          padding-right: 30px;
+          padding-left: 0px;
+          @include large {
+            padding: 0px;
+          }
+        }
+        figure {
+          order: 2;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.break {
+  width: 100%;
+  padding-right: 0;
+  max-width: unset;
+  .container {
+    width: calc(100% - 100px);
+    margin-left: auto;
+    background-color: #000;
+    .wrapper {
+      h2 {
+        font-family: $heading-font;
+        text-transform: none;
+        font-weight: 400;
+        font-size: 72px;
+        line-height: 1.4;
+        color: #fff;
+      }
+    }
+  }
+}

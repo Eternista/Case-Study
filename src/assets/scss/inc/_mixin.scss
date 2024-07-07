@@ -1,0 +1,30 @@
+@mixin extra-extra-large {
+  @media all and (max-width: 1440px) {
+    @content;
+  }
+}
+@mixin extra-large {
+  @media all and (max-width: 1280px) {
+    @content;
+  }
+}
+@mixin large {
+  @media all and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin medium {
+  @media all and (max-width: 850px) {
+    @content;
+  }
+}
+@mixin small {
+  @media all and (max-width: 650px) {
+    @content;
+  }
+}
+@mixin x-small {
+  @media all and (max-width: 480px) {
+    @content;
+  }
+}

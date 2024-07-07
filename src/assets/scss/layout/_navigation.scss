@@ -1,0 +1,208 @@
+header {
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100px;
+    @include extra-large {
+      height: 60px;
+    }
+    nav {
+      max-width: 500px;
+      width: 100%;
+      @include medium {
+        display: none;
+      }
+      ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        li {
+          a {
+            padding: 20px;
+            color: $color-secondary;
+            transition: 0.5s linear;
+            &:hover {
+              color: $color-primary;
+            }
+          }
+        }
+      }
+    }
+    .logo {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-family: $heading-font;
+    }
+  }
+}
+
+.fixed-nav {
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+  z-index: 150;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: -100%;
+  transition: 0.5s ease;
+  transition-delay: 0;
+  &::before {
+    content: "Let's work together";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.03;
+    font-size: 16vw;
+    z-index: 1;
+    @include large {
+      display: none;
+    }
+  }
+  ul {
+    opacity: 0;
+    position: relative;
+    z-index: 2;
+    li {
+      margin-bottom: 20px;
+      transition: 0.4s ease;
+      top: -100px;
+      position: relative;
+      opacity: 0;
+      transition: unset;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      a {
+        font-size: 5vw;
+        @include extra-extra-large {
+          font-size: 70px;
+        }
+        @include medium {
+          font-size: 60px;
+        }
+        @include small {
+          font-size: 50px;
+        }
+        color: $color-secondary;
+        transition: 0.5s ease;
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+  &::after {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 0.5s ease;
+    transition-delay: 0.3s;
+    content: '';
+    display: block;
+  }
+  &.active {
+    left: 0;
+    transition-delay: 0 !important;
+    ul {
+      opacity: 1;
+      transition: 0s ease;
+      transition-delay: 0.6s;
+      li {
+        top: 0;
+        opacity: 1;
+        transition: all 0.4s ease;
+      }
+    }
+    &::after {
+      left: 0;
+      transition-delay: 0.2s !important;
+    }
+  }
+  &:not(.active) {
+    ul {
+      li {
+        transition-delay: unset !important;
+      }
+    }
+  }
+}
+
+// //MENU
+
+.menu-btn {
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 170;
+  cursor: pointer;
+  border: 2px solid $color-body;
+  padding: 10px;
+  transition: 0.3s ease;
+  //   MENU TEXT
+  &:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -6px;
+    left: -6px;
+    border: 2px solid #000;
+  }
+  //   MENU TEXT
+  //   ADDITIONAL BORDER
+  &:after {
+    content: 'MENU';
+    position: absolute;
+    font-family: $heading-font;
+    font-weight: 900;
+    bottom: -18px;
+    font-size: 12px;
+  }
+  //   ADDITIONAL BORDER
+  &.hide {
+    @media all and (min-width: 851px) {
+      opacity: 0;
+      margin-right: -200px;
+    }
+  }
+  &.active {
+    .top {
+      position: relative;
+      width: 60%;
+      transform: rotate(-45deg) translate(-5.5px, 3.5px);
+    }
+    .middle {
+      width: 100%;
+      left: 1px;
+    }
+    .bottom {
+      position: relative;
+      width: 60%;
+      transform: rotate(45deg) translate(-5.5px, -3.5px);
+    }
+  }
+  span {
+    position: relative;
+    height: 2px;
+    width: 100%;
+    background: #000000;
+    transition: 0.5s;
+    display: block;
+  }
+}

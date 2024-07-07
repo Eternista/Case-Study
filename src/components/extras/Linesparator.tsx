@@ -1,9 +1,9 @@
 interface SeparatorProps {
-    color: string;
+  color: string;
 }
 
-const LineSeparator = ({color} : SeparatorProps) => {
-    return <div className={`lineseparator lineseparator-${color}`}></div>
-}
+const LineSeparator = ({ color }: SeparatorProps) => {
+  return <div className={`lineseparator lineseparator-${color}`}></div>;
+};
 
 export default LineSeparator;

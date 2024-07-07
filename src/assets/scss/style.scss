@@ -1,0 +1,23 @@
+//INC
+
+@import './inc/reset';
+@import './inc/variables';
+@import './inc/mixin';
+@import './inc/fonts';
+@import './inc/basic';
+@import './inc/add';
+
+//LAYOUTS
+
+@import './layout/navigation';
+@import './layout/intro';
+
+//SECTIONS
+
+@import './sections/banner';
+@import './sections/about';
+@import './sections/cta';
+@import './sections/work';
+@import './sections/story';
+@import './sections/testimonials';
+@import './sections/contact';

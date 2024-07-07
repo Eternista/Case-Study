@@ -1,0 +1,61 @@
+.cta {
+  background: $color-body;
+  color: $white;
+  .wrapper {
+    padding: 150px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include extra-large {
+      flex-wrap: wrap;
+      padding: 100px 60px;
+      h2 {
+        width: 100%;
+        margin-bottom: 40px;
+      }
+    }
+    @include small {
+      padding: 80px 40px;
+    }
+    .cta-btn {
+      color: $color-body;
+      background: $white;
+      min-width: 260px;
+      text-align: center;
+      padding: 20px;
+      transition: 0.4s ease-in-out;
+      position: relative;
+      top: 0;
+      &:before {
+        transition: 0.4s ease-in-out;
+        content: "Let's work together";
+        font-size: 15px;
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $white;
+        display: block;
+        opacity: 0;
+        width: 100%;
+      }
+      &:hover {
+        background: $color-blue;
+        color: $white;
+        top: 10px;
+        &:before {
+          opacity: 1;
+          top: -30px;
+          z-index: 1;
+        }
+      }
+      @include extra-large {
+        min-width: 240px;
+        padding: 15px;
+      }
+      @include small {
+        min-width: 200px;
+      }
+    }
+  }
+}

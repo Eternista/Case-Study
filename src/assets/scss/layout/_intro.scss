@@ -1,0 +1,36 @@
+html {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: $color-primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  @include x-small {
+    padding: 0 20px;
+  }
+  z-index: 150;
+  .intro-text {
+    transform: translateX(-200%);
+    position: relative;
+    max-width: 920px;
+    color: $white;
+    span {
+      opacity: 0;
+      &:nth-child(1n + 25) {
+        color: #0075ff;
+        text-decoration: underline;
+        margin-right: -1px;
+        position: relative;
+      }
+    }
+  }
+}
