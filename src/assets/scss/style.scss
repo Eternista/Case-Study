@@ -10,14 +10,15 @@
 //LAYOUTS
 
 @import './layout/navigation';
-@import './layout/intro';
 
 //SECTIONS
 
 @import './sections/banner';
-@import './sections/about';
+// @import './sections/about';
+@import './sections/intro';
+@import './sections/baseContext';
 @import './sections/cta';
-@import './sections/work';
-@import './sections/story';
-@import './sections/testimonials';
-@import './sections/contact';
+// @import './sections/work';
+// @import './sections/story';
+// @import './sections/testimonials';
+// @import './sections/contact';

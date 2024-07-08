@@ -3,6 +3,7 @@ html {
   scroll-behavior: smooth;
   font-family: $body-font;
   overflow-x: hidden;
+  overflow-y: auto;
   font-size: 10px;
 }
 * {
@@ -129,5 +130,8 @@ section {
   padding: 0 40px;
   @include medium {
     padding: 0 20px;
+  }
+  &-small {
+    max-width: 980px;
   }
 }

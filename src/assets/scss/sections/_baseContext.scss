@@ -1,0 +1,13 @@
+.l-sec-base {
+    .wrapper {
+        .section-title {
+            margin-bottom: 76px;
+        }
+        div:not(:last-child) {
+            margin-bottom: 38px;
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
