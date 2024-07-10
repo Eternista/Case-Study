@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/scss/style.scss';
 import Header from './components/partials/Header';
 import Main from './components/partials/Main';
